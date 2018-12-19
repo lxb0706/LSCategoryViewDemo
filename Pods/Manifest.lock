@@ -1,0 +1,33 @@
+PODS:
+  - Masonry (1.1.0)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
+  - Reveal-SDK (4)
+
+DEPENDENCIES:
+  - Masonry
+  - ReactiveCocoa (= 2.5)
+  - Reveal-SDK (from `https://git.coding.net/kakukeme/Reveal-SDK.git`)
+
+EXTERNAL SOURCES:
+  Reveal-SDK:
+    :git: https://git.coding.net/kakukeme/Reveal-SDK.git
+
+CHECKOUT OPTIONS:
+  Reveal-SDK:
+    :commit: ffdbc623851467394a99effb2dfced2f61c358f1
+    :git: https://git.coding.net/kakukeme/Reveal-SDK.git
+
+SPEC CHECKSUMS:
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  Reveal-SDK: 6504f524a2e7138913251139ba30a03b3da91792
+
+PODFILE CHECKSUM: 5ef4d5678ec0b780e308451e2adbe2be319625bd
+
+COCOAPODS: 1.2.1
