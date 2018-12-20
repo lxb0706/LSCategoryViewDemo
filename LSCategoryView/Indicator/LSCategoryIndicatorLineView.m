@@ -54,10 +54,20 @@
         CGFloat leftX = leftCellFrame.origin.x + (leftCellFrame.size.width - leftWidth)/2;
         CGFloat rightX = rightCellFrame.origin.x + (rightCellFrame.size.width - rightWidth)/2;
         
-        targetX = [LSCategoryFactory interpolationFrom:leftX to:rightX percent:percent];
+//        targetX = [LSCategoryFactory interpolationFrom:leftX to:rightX percent:percent];
+//
+//        if (self.indicatorLineWidth == LSCategoryViewAutomaticDimension) {
+//            targetWidth = [LSCategoryFactory interpolationFrom:leftCellFrame.size.width to:rightCellFrame.size.width percent:percent];
+//        }
         
-        if (self.indicatorLineWidth == LSCategoryViewAutomaticDimension) {
-            targetWidth = [LSCategoryFactory interpolationFrom:leftCellFrame.size.width to:rightCellFrame.size.width percent:percent];
+        CGFloat offsetX = 20;//x的少量偏移量
+        CGFloat maxWidth = rightX - leftX + rightWidth - offsetX*2;
+        if (percent <= 0.5) {
+            targetX = [LSCategoryFactory interpolationFrom:leftX to:leftX + offsetX percent:percent*2];;
+            targetWidth = [LSCategoryFactory interpolationFrom:leftWidth to:maxWidth percent:percent*2];
+        }else {
+            targetX = [LSCategoryFactory interpolationFrom:(leftX + offsetX) to:rightX percent:(percent - 0.5)*2];
+            targetWidth = [LSCategoryFactory interpolationFrom:maxWidth to:rightWidth percent:(percent - 0.5)*2];
         }
     }
     
